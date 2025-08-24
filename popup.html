@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fsociety Social Media Manager</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="glitch" data-text="FSOCIETY">FSOCIETY</span>
+                <span class="subtitle">Social Manager</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-accounts">0</span>
+                    <span class="stat-label">الحسابات</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="active-sessions">0</span>
+                    <span class="stat-label">النشطة</span>
+                </div>
+            </div>
+
+            <div class="search-section">
+                <input type="text" id="search-input" placeholder="البحث في الحسابات...">
+                <select id="platform-filter">
+                    <option value="">جميع المنصات</option>
+                </select>
+            </div>
+
+            <div class="accounts-list" id="accounts-list">
+                <!-- Accounts will be populated here -->
+            </div>
+
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <div class="empty-icon">📱</div>
+                <p>لا توجد حسابات</p>
+                <button class="btn btn-primary" id="open-manager">فتح المدير</button>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" id="add-account">إضافة حساب</button>
+                <button class="btn btn-secondary" id="open-manager">فتح المدير الكامل</button>
+            </div>
+        </main>
+
+        <!-- Account Details Modal -->
+        <div id="account-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">تفاصيل الحساب</h3>
+                    <button class="close-btn" id="close-modal">&times;</button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Account details will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Container -->
+        <div id="toast-container" class="toast-container"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
+
